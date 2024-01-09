@@ -14,14 +14,12 @@ class Add(Operator):
     def operate(self):
         return [self.x + self.y]
 ```
-
-* Result 
-
 ```
 Enter Equation: 1+1
 2
 ```
 
+```
 class Add(Operator):
     def __init__(self, x=0, y=0):
         super().__init__(x,y)
@@ -30,9 +28,6 @@ class Add(Operator):
     def operate(self):
         return [self.x + self.y]
 ```
-
-* Result 
-
 ```
 Enter Equation: 1s1
 2
