@@ -25,6 +25,6 @@ class Add(Operator):
         self.priority = 1
 ```
 ```
-Enter Equation: 1s1
+Enter Equation: 1#1
 2
 ```
