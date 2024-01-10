@@ -112,7 +112,7 @@ class Pipe(Parenthesis):
         self.closeoperator = ']'
         self.priority = 4
 
-#the symbols of numbers changing is beyond the scope of this project.
+#The symbols of numbers changing is beyond the scope of this project.
 global numbers 
 numbers = ['0','1','2','3','4','5','6','7','8','9','.']
 
@@ -156,7 +156,7 @@ def calculate(operator, index, equation):
     operation = Operator().findOperation(operator)
     return equation[:index-1] + operation(x,y).operate() + equation[index+2:]
 
-#removes unnecessary dot points and rounds to 3 decimal places
+#Removes unnecessary dot points and rounds to 3 decimal places
 def formatNumber(num):
   if num % 1 == 0:
     return int(num)
