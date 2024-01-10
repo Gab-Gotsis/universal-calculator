@@ -1,4 +1,4 @@
-#code from https://stackoverflow.com/questions/6881170/is-there-a-way-to-autogenerate-valid-arithmetic-expressions
+#code inspired by https://stackoverflow.com/questions/6881170/is-there-a-way-to-autogenerate-valid-arithmetic-expressions
 class Expression:
     pass
 
@@ -27,16 +27,18 @@ class ParenthesizedExpression(Expression):
 
 from random import random, randint, choice
 
-def randomExpression(prob = 1):
-    p = random()
-    if p > prob:
+def randomExpression(p = None):
+    if p is None:
+        p = random()
+
+    if p > 1:
         return Number(randint(1, 100))
     elif randint(0, 1) == 0:
-        return ParenthesizedExpression(randomExpression(prob / 1.2))
+        return ParenthesizedExpression(randomExpression(p + 0.2))
     else:
-        left = randomExpression(prob / 1.2)
+        left = randomExpression(p + 0.2)
         op = choice(["+", "-", "*", "/"])
-        right = randomExpression(prob / 1.2)
+        right = randomExpression(p + 0.2)
         return BinaryExpression(left, op, right)
 
 
@@ -44,7 +46,7 @@ from calculator import *
 
 flag = True
 for i in range(100):
-    equation = str(randomExpression(1))
+    equation = str(randomExpression())
     if float(solve(modifyInput(equation))[0]) != float(eval(equation)):
         print("error")
         print(equation)

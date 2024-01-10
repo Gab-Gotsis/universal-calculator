@@ -103,17 +103,18 @@ class Brackets(Parenthesis):
         super().__init__(index, equation)
         self.operator =  '('
         self.closeoperator = ')'
-        self.priority = 4  
+        self.priority = 5  
 
 class Pipe(Parenthesis):
     def __init__(self, index=0, equation=0):
         super().__init__(index, equation)
         self.operator =  '['
         self.closeoperator = ']'
-        self.priority = 3
+        self.priority = 4
 
-#the symbols of numbers changing is beyond the scope of this project, so we can hard code it
-numbers = ['0','1','2','3','4','5','6','7','8','9', '.']
+#the symbols of numbers changing is beyond the scope of this project.
+global numbers 
+numbers = ['0','1','2','3','4','5','6','7','8','9','.']
 
 #Return the priority of the symbol
 def priority(symbol):
@@ -165,8 +166,8 @@ def formatNumber(num):
 
 #Uncomment the following lines to input equation through terminal:
   
-#input = input("Enter Equation: ")
-#print(formatNumber(solve(modifyInput(input))[0]))
+# input = input("Enter Equation: ")
+# print(formatNumber(solve(modifyInput(input))[0]))
 
 
 
