@@ -1,4 +1,6 @@
 #code inspired by https://stackoverflow.com/questions/6881170/is-there-a-way-to-autogenerate-valid-arithmetic-expressions
+from calculator import *
+
 class Expression:
     pass
 
@@ -40,9 +42,6 @@ def randomExpression(p = None):
         op = choice(["+", "-", "*", "/"])
         right = randomExpression(p + 0.2)
         return BinaryExpression(left, op, right)
-
-
-from calculator import *
 
 flag = True
 for i in range(100):
