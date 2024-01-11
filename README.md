@@ -58,7 +58,7 @@ Enter Equation: 1A1
 2
 ```
 
-Here is an example of changing the priority of operations such that they occur in reverse order.
+Below is an example of changing the priority of operations such that they occur in reverse order.
 ```
 class Add(Operator):
     def __init__(self, x=0, y=0):
