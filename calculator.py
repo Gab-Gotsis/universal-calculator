@@ -26,7 +26,7 @@ class Subtract(Operator):
     def __init__(self, x=0, y=0):
         super().__init__(x,y)
         self.operator =  '-'
-        self.priority = 1
+        self.priority = 2
     def operate(self):
         return [self.x - self.y]
 
@@ -34,7 +34,7 @@ class Multiply(Operator):
     def __init__(self, x=0, y=0):
         super().__init__(x,y)
         self.operator =  '*'
-        self.priority = 2
+        self.priority = 1
     def operate(self):
         return [self.x * self.y]
 
@@ -46,8 +46,7 @@ class Divide(Operator):
 
     def operate(self):
         if self.y == 0:
-            print("error, can't divide by 0")
-            return "error"
+            raise Exception("Cannot divide by zero")
         return [self.x / self.y]
 
 class Exponent(Operator):
@@ -151,6 +150,8 @@ def solve(equation):
 
 #Performs operand logic
 def calculate(operator, index, equation):
+    if equation[index-1] not in numbers or equation[index+1] not in numbers:
+        raise Exception("Invalid equation")
     x = float(equation[index-1])
     y = float(equation[index+1])
     operation = Operator().findOperation(operator)
@@ -166,8 +167,8 @@ def formatNumber(num):
 
 #Uncomment the following lines to input equation through terminal:
   
-# input = input("Enter Equation: ")
-# print(formatNumber(solve(modifyInput(input))[0]))
+input = input("Enter Equation: ")
+print(formatNumber(solve(modifyInput(input))[0]))
 
 
 
