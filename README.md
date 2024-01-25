@@ -1,5 +1,5 @@
 # Object Oriented Scalable Calculator
-A simple O-O calculator built with a focus on extreme scalability, allowing new operations to be added with ease.
+A simple OO calculator built with a focus on extreme scalability, allowing new operations to be added with ease.
 
 The goal of this project was to create a calculator in a world where new operations are invented and changed every day (operations referring to addition, subtraction, and other similar calculations). A calculator in this world would need to be modifiable in as few lines as possible. In order to achieve this, this program uses OOP and abstraction techniques to be easily changeable and scalable, only requiring one symbol to be altered in order to change an operation, and one class to be added to create a new one.
 
